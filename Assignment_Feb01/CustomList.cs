@@ -166,7 +166,7 @@ namespace Assignment_Feb01
 		{
 			// Refer to the IEnumerator documentation for an example of
 			// implementing an enumerator.
-			throw new Exception("The method or operation is not implemented.");
+			return new CustomEnumerator(_contents);
 		}
 
 		public void PrintContents()

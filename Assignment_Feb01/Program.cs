@@ -4,12 +4,25 @@ namespace Assignment_Feb01
 {
 	class MainClass
 	{
+		private static CustomList test;
+
 		public static void Main(string[] args)
 		{
 			demoList();
+			demoEnumerable(); // Run with Above
 
 			demoClone();
 			Console.ReadLine();
+		}
+
+		static void demoEnumerable()
+		{
+			IEnumerableDemo demo = new IEnumerableDemo(test);
+			foreach (var item in demo)
+			{
+				var data = item as string;
+				Console.WriteLine(data);
+			}
 		}
 
 		static void demoClone()
@@ -22,7 +35,7 @@ namespace Assignment_Feb01
 
 		public static void demoList() 
 		{
-			CustomList test = new CustomList();
+			test = new CustomList();
 
 			// Populate the List
 			Console.WriteLine("Populate the List");
