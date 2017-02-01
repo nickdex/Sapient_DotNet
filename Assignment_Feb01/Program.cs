@@ -6,6 +6,22 @@ namespace Assignment_Feb01
 	{
 		public static void Main(string[] args)
 		{
+			demoList();
+
+			demoClone();
+			Console.ReadLine();
+		}
+
+		static void demoClone()
+		{
+			CloneDemo demo = new CloneDemo(2);
+			Console.WriteLine("Object: " + demo.ToString() + "value: " + demo.Value);
+			CloneDemo clone = demo.Clone() as CloneDemo;
+			Console.WriteLine("Object: " + clone.ToString() + "value: " + clone.Value);
+		}
+
+		public static void demoList() 
+		{
 			CustomList test = new CustomList();
 
 			// Populate the List
@@ -44,7 +60,6 @@ namespace Assignment_Feb01
 			Console.WriteLine("Check for specific elements in the list");
 			Console.WriteLine("List contains \"three\": {0}", test.Contains("three"));
 			Console.WriteLine("List contains \"ten\": {0}", test.Contains("ten"));
-			Console.ReadLine();
-		}
+
 	}
 }
