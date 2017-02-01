@@ -6,10 +6,11 @@ namespace Assignment_Feb01
 	{
 		private static CustomList test;
 
+		// Demos total 4 given interfaces
 		public static void Main(string[] args)
 		{
 			demoList();
-			demoEnumerable(); // Run with Above
+			demoEnumerable(); // Run with Above and contains IEnumerator demo also
 
 			demoClone();
 			Console.ReadLine();
