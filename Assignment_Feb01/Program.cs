@@ -33,7 +33,7 @@ namespace Assignment_Feb01
 			Console.WriteLine("Object: " + clone.ToString() + "value: " + clone.Value);
 		}
 
-		public static void demoList() 
+		public static void demoList()
 		{
 			test = new CustomList();
 
@@ -74,5 +74,6 @@ namespace Assignment_Feb01
 			Console.WriteLine("List contains \"three\": {0}", test.Contains("three"));
 			Console.WriteLine("List contains \"ten\": {0}", test.Contains("ten"));
 
+		}
 	}
 }
