@@ -29,9 +29,9 @@ namespace Assignment_Feb01
 		static void demoClone()
 		{
 			CloneDemo demo = new CloneDemo(2);
-			Console.WriteLine("Object: " + demo.ToString() + "value: " + demo.Value);
+			Console.WriteLine("Object: " + demo.GetHashCode() + " value: " + demo.Value);
 			CloneDemo clone = demo.Clone() as CloneDemo;
-			Console.WriteLine("Object: " + clone.ToString() + "value: " + clone.Value);
+			Console.WriteLine("Object: " + clone.GetHashCode() + " value: " + clone.Value);
 		}
 
 		public static void demoList()

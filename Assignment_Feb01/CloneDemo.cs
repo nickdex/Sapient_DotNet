@@ -6,7 +6,7 @@ namespace Assignment_Feb01
 		int _value;
 		public CloneDemo(int value)
 		{
-			value = _value;
+			_value = value;
 		}
 
 		public int Value

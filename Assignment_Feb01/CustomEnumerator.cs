@@ -22,8 +22,12 @@ namespace Assignment_Feb01
 
 		public bool MoveNext()
 		{
-			_currentIndex++;
-			return true;
+            if (_currentIndex < _contents.Length - 1 )
+            {
+			    _currentIndex++;
+			    return true;
+            }
+            return false;
 		}
 
 		public void Reset()
