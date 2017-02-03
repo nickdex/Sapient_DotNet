@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIITester", "DIITester\DIIT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLibrary", "TestLibrary\TestLibrary.csproj", "{00FF3CD7-E5B5-496D-B922-8773FC0BF523}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileIO", "FileIO\FileIO.csproj", "{7AB2DE8A-3134-4358-B8D9-6868E9F14396}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,16 @@ Global
 		{00FF3CD7-E5B5-496D-B922-8773FC0BF523}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{00FF3CD7-E5B5-496D-B922-8773FC0BF523}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{00FF3CD7-E5B5-496D-B922-8773FC0BF523}.Release|x86.ActiveCfg = Release|Any CPU
+		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
