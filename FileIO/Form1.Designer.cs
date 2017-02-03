@@ -38,8 +38,14 @@
             this.lblFolderPath = new System.Windows.Forms.Label();
             this.btnFolderBrowse = new System.Windows.Forms.Button();
             this.listBoxFiles = new System.Windows.Forms.ListBox();
-            this.btnMisc = new System.Windows.Forms.Button();
+            this.btnShowFilesAndFolder = new System.Windows.Forms.Button();
             this.lblFileInfo = new System.Windows.Forms.Label();
+            this.btnCreateFolder = new System.Windows.Forms.Button();
+            this.listBoxFolders = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnBrowseForCopy = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBrowse
@@ -83,12 +89,12 @@
             this.txtBoxContent.Location = new System.Drawing.Point(15, 56);
             this.txtBoxContent.Multiline = true;
             this.txtBoxContent.Name = "txtBoxContent";
-            this.txtBoxContent.Size = new System.Drawing.Size(125, 261);
+            this.txtBoxContent.Size = new System.Drawing.Size(125, 70);
             this.txtBoxContent.TabIndex = 4;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(146, 248);
+            this.btnSave.Location = new System.Drawing.Point(43, 131);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 5;
@@ -127,36 +133,94 @@
             this.listBoxFiles.FormattingEnabled = true;
             this.listBoxFiles.Location = new System.Drawing.Point(203, 98);
             this.listBoxFiles.Name = "listBoxFiles";
-            this.listBoxFiles.Size = new System.Drawing.Size(205, 95);
+            this.listBoxFiles.Size = new System.Drawing.Size(205, 56);
             this.listBoxFiles.TabIndex = 9;
             this.listBoxFiles.SelectedIndexChanged += new System.EventHandler(this.listBoxFiles_SelectedIndexChanged);
             // 
-            // btnMisc
+            // btnShowFilesAndFolder
             // 
-            this.btnMisc.Location = new System.Drawing.Point(414, 156);
-            this.btnMisc.Name = "btnMisc";
-            this.btnMisc.Size = new System.Drawing.Size(75, 23);
-            this.btnMisc.TabIndex = 10;
-            this.btnMisc.Text = "Misc";
-            this.btnMisc.UseVisualStyleBackColor = true;
-            this.btnMisc.Click += new System.EventHandler(this.btnMisc_Click);
+            this.btnShowFilesAndFolder.Location = new System.Drawing.Point(414, 117);
+            this.btnShowFilesAndFolder.Name = "btnShowFilesAndFolder";
+            this.btnShowFilesAndFolder.Size = new System.Drawing.Size(84, 23);
+            this.btnShowFilesAndFolder.TabIndex = 10;
+            this.btnShowFilesAndFolder.Text = "Refresh";
+            this.btnShowFilesAndFolder.UseVisualStyleBackColor = true;
+            this.btnShowFilesAndFolder.Click += new System.EventHandler(this.btnShowFilesAndFolder_Click);
             // 
             // lblFileInfo
             // 
             this.lblFileInfo.AutoSize = true;
-            this.lblFileInfo.Location = new System.Drawing.Point(200, 206);
+            this.lblFileInfo.Location = new System.Drawing.Point(200, 82);
             this.lblFileInfo.Name = "lblFileInfo";
             this.lblFileInfo.Size = new System.Drawing.Size(51, 13);
             this.lblFileInfo.TabIndex = 11;
             this.lblFileInfo.Text = "lblFileInfo";
             // 
+            // btnCreateFolder
+            // 
+            this.btnCreateFolder.Location = new System.Drawing.Point(414, 175);
+            this.btnCreateFolder.Name = "btnCreateFolder";
+            this.btnCreateFolder.Size = new System.Drawing.Size(84, 23);
+            this.btnCreateFolder.TabIndex = 12;
+            this.btnCreateFolder.Text = "Create Folder";
+            this.btnCreateFolder.UseVisualStyleBackColor = true;
+            this.btnCreateFolder.Click += new System.EventHandler(this.btnCreateFolder_Click);
+            // 
+            // listBoxFolders
+            // 
+            this.listBoxFolders.FormattingEnabled = true;
+            this.listBoxFolders.Location = new System.Drawing.Point(203, 160);
+            this.listBoxFolders.Name = "listBoxFolders";
+            this.listBoxFolders.Size = new System.Drawing.Size(205, 56);
+            this.listBoxFolders.TabIndex = 13;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(235, 222);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(205, 20);
+            this.textBox1.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(168, 225);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "New Location";
+            // 
+            // btnBrowseForCopy
+            // 
+            this.btnBrowseForCopy.Location = new System.Drawing.Point(446, 220);
+            this.btnBrowseForCopy.Name = "btnBrowseForCopy";
+            this.btnBrowseForCopy.Size = new System.Drawing.Size(99, 23);
+            this.btnBrowseForCopy.TabIndex = 16;
+            this.btnBrowseForCopy.Text = "Browse Folder";
+            this.btnBrowseForCopy.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(446, 249);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Copy";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 338);
+            this.ClientSize = new System.Drawing.Size(681, 409);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBrowseForCopy);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.listBoxFolders);
+            this.Controls.Add(this.btnCreateFolder);
             this.Controls.Add(this.lblFileInfo);
-            this.Controls.Add(this.btnMisc);
+            this.Controls.Add(this.btnShowFilesAndFolder);
             this.Controls.Add(this.listBoxFiles);
             this.Controls.Add(this.btnFolderBrowse);
             this.Controls.Add(this.lblFolderPath);
@@ -169,6 +233,7 @@
             this.Controls.Add(this.btnBrowse);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,8 +251,14 @@
         private System.Windows.Forms.Label lblFolderPath;
         private System.Windows.Forms.Button btnFolderBrowse;
         private System.Windows.Forms.ListBox listBoxFiles;
-        private System.Windows.Forms.Button btnMisc;
+        private System.Windows.Forms.Button btnShowFilesAndFolder;
         private System.Windows.Forms.Label lblFileInfo;
+        private System.Windows.Forms.Button btnCreateFolder;
+        private System.Windows.Forms.ListBox listBoxFolders;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnBrowseForCopy;
+        private System.Windows.Forms.Button button1;
     }
 }
 

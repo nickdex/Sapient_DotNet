@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLibrary", "TestLibrary\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileIO", "FileIO\FileIO.csproj", "{7AB2DE8A-3134-4358-B8D9-6868E9F14396}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationDemo", "SerializationDemo\SerializationDemo.csproj", "{8F4D5502-9FBD-483E-997A-C339269CFB9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,16 @@ Global
 		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7AB2DE8A-3134-4358-B8D9-6868E9F14396}.Release|x86.ActiveCfg = Release|Any CPU
+		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

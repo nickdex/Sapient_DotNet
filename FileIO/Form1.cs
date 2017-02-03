@@ -127,19 +127,32 @@ namespace FileIO
             {
                 txtFolderPath.Text = folderDialog.SelectedPath;
             }
-
-
         }
 
-        private void btnMisc_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Show Files and Folders in listboxes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnShowFilesAndFolder_Click(object sender, EventArgs e)
         {
-            string[] files = Directory.GetFiles(txtFolderPath.Text);
+            RefreshAndLoad();
+        }
 
-            foreach (var item in files)
-            {
-                listBoxFiles.Items.Add(item);
-            }
-            
+        private void RefreshAndLoad()
+        {
+            ClearListBoxes();
+            List<string> files = Directory.GetFiles(txtFolderPath.Text).ToList();
+            files.ForEach(file => listBoxFiles.Items.Add(file));
+
+            List<string> folders = Directory.GetDirectories(txtFolderPath.Text).ToList();
+            folders.ForEach(folder => listBoxFolders.Items.Add(folder));
+        }
+
+        private void ClearListBoxes()
+        {
+            listBoxFiles.Items.Clear();
+            listBoxFolders.Items.Clear();
         }
 
         private void listBoxFiles_SelectedIndexChanged(object sender, EventArgs e)
@@ -147,8 +160,23 @@ namespace FileIO
             if (listBoxFiles.SelectedIndex == -1) return;
 
             FileInfo fileInfo = new FileInfo(listBoxFiles.SelectedItem as string);
+            
             lblFileInfo.Text = fileInfo.LastAccessTime.ToString();
         }
+
+        private void btnCreateFolder_Click(object sender, EventArgs e)
+        {
+            Directory.CreateDirectory(Path.Combine(txtFolderPath.Text, "CodeGenerated"));
+            RefreshAndLoad();
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
 
 
 
