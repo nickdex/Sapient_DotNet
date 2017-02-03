@@ -5,7 +5,6 @@ namespace Assignment_Feb01
 	class MainClass
 	{
 		private static CustomList test;
-
 		// Demos total 4 given interfaces
 		public static void Main(string[] args)
 		{
@@ -15,6 +14,11 @@ namespace Assignment_Feb01
 			demoClone();
 			Console.ReadLine();
 		}
+
+        public void testMethod(int x, int y)
+        {
+
+        }
 
 		static void demoEnumerable()
 		{
