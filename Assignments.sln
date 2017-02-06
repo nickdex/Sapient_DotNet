@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileIO", "FileIO\FileIO.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationDemo", "SerializationDemo\SerializationDemo.csproj", "{8F4D5502-9FBD-483E-997A-C339269CFB9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoNetDemo", "AdoNetDemo\AdoNetDemo.csproj", "{E4795A88-28C8-486F-BBD0-4B9D90004E70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,16 @@ Global
 		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{8F4D5502-9FBD-483E-997A-C339269CFB9A}.Release|x86.ActiveCfg = Release|Any CPU
+		{E4795A88-28C8-486F-BBD0-4B9D90004E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4795A88-28C8-486F-BBD0-4B9D90004E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4795A88-28C8-486F-BBD0-4B9D90004E70}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E4795A88-28C8-486F-BBD0-4B9D90004E70}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E4795A88-28C8-486F-BBD0-4B9D90004E70}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E4795A88-28C8-486F-BBD0-4B9D90004E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4795A88-28C8-486F-BBD0-4B9D90004E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4795A88-28C8-486F-BBD0-4B9D90004E70}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E4795A88-28C8-486F-BBD0-4B9D90004E70}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E4795A88-28C8-486F-BBD0-4B9D90004E70}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
