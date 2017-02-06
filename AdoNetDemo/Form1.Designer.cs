@@ -30,7 +30,7 @@
         {
             this.btnConnected = new System.Windows.Forms.Button();
             this.btnDisconnected = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridEmployee = new System.Windows.Forms.DataGridView();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -44,7 +44,11 @@
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCompany = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnClickMe = new System.Windows.Forms.Button();
+            this.dataGridOrder = new System.Windows.Forms.DataGridView();
+            this.btnMode1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConnected
@@ -67,13 +71,14 @@
             this.btnDisconnected.UseVisualStyleBackColor = true;
             this.btnDisconnected.Click += new System.EventHandler(this.btnDisconnected_Click);
             // 
-            // dataGridView1
+            // dataGridEmployee
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(394, 150);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridEmployee.Location = new System.Drawing.Point(12, 106);
+            this.dataGridEmployee.Name = "dataGridEmployee";
+            this.dataGridEmployee.Size = new System.Drawing.Size(394, 150);
+            this.dataGridEmployee.TabIndex = 2;
+            this.dataGridEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnInsert
             // 
@@ -185,11 +190,42 @@
             this.txtCompany.Size = new System.Drawing.Size(100, 20);
             this.txtCompany.TabIndex = 14;
             // 
+            // btnClickMe
+            // 
+            this.btnClickMe.Location = new System.Drawing.Point(421, 106);
+            this.btnClickMe.Name = "btnClickMe";
+            this.btnClickMe.Size = new System.Drawing.Size(75, 23);
+            this.btnClickMe.TabIndex = 16;
+            this.btnClickMe.Text = "Click Me";
+            this.btnClickMe.UseVisualStyleBackColor = true;
+            this.btnClickMe.Click += new System.EventHandler(this.btnClickMe_Click);
+            // 
+            // dataGridOrder
+            // 
+            this.dataGridOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridOrder.Location = new System.Drawing.Point(537, 106);
+            this.dataGridOrder.Name = "dataGridOrder";
+            this.dataGridOrder.Size = new System.Drawing.Size(394, 150);
+            this.dataGridOrder.TabIndex = 17;
+            // 
+            // btnMode1
+            // 
+            this.btnMode1.Location = new System.Drawing.Point(157, 309);
+            this.btnMode1.Name = "btnMode1";
+            this.btnMode1.Size = new System.Drawing.Size(75, 23);
+            this.btnMode1.TabIndex = 18;
+            this.btnMode1.Text = "Mode 1";
+            this.btnMode1.UseVisualStyleBackColor = true;
+            this.btnMode1.Click += new System.EventHandler(this.btnMode1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 361);
+            this.ClientSize = new System.Drawing.Size(956, 396);
+            this.Controls.Add(this.btnMode1);
+            this.Controls.Add(this.dataGridOrder);
+            this.Controls.Add(this.btnClickMe);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.label2);
@@ -203,13 +239,14 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridEmployee);
             this.Controls.Add(this.btnDisconnected);
             this.Controls.Add(this.btnConnected);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridOrder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,7 +256,7 @@
 
         private System.Windows.Forms.Button btnConnected;
         private System.Windows.Forms.Button btnDisconnected;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridEmployee;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
@@ -233,6 +270,9 @@
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCompany;
+        private System.Windows.Forms.Button btnClickMe;
+        private System.Windows.Forms.DataGridView dataGridOrder;
+        private System.Windows.Forms.Button btnMode1;
     }
 }
 

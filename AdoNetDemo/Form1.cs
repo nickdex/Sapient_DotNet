@@ -58,6 +58,7 @@ namespace AdoNetDemo
         private void btnDisconnected_Click(object sender, EventArgs e)
         {
             ShowTableValues();
+            //InitDataSet();
         }
 
         private void ShowTableValues()
@@ -74,8 +75,10 @@ namespace AdoNetDemo
 
             DataSet ds = new DataSet();
             int rows = adapter.Fill(ds);
-
-            dataGridView1.DataSource = ds.Tables[0];
+           
+            DataTable table = ds.Tables[0];
+            dataGridEmployee.DataSource = table;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -210,13 +213,126 @@ namespace AdoNetDemo
 
             // Adding rows to table
             table.Rows.Add(row);
-
+            table.Rows.Add("12", "Neha", "22");
             // Adding table to dataset
             dataSet.Tables.Add(table);
 
-            dataGridView1.DataSource = dataSet.Tables[0];
+            var rows = table.Select("2 = 2", "Age DeSC");
+
+            var table1  = rows.CopyToDataTable();
+
+            dataGridEmployee.DataSource = table1;
+
+
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+       
+        private void btnClickMe_Click(object sender, EventArgs e)
+        {
+            OleDbDataAdapter adapter;
+            DataTable dataTable;
+            String queryString1 = "SELECT * FROM Employee";
+            OleDbConnection connection;
+            InitializeDb(out connection);
+            OleDbCommand command = connection.CreateCommand();
+            command.CommandText = queryString1;
+            adapter = new OleDbDataAdapter(command);
+
+            dataTable = dataGridEmployee.DataSource as DataTable;
+
+
+            OleDbCommandBuilder oleCommandBuilder;
+            try
+            {
+                connection.Open();
+                
+                oleCommandBuilder = new OleDbCommandBuilder(adapter);
+            adapter.Update(dataTable);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ModeOne()
+        {
+            OleDbConnection connection = new OleDbConnection();
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OleDb.12.0;Data Source=C:\Users\nwarke\Desktop\NickDb.accdb";
+
+            String query1 = "Select * from Employee";
+            String query2 = "Select * from [Order]";
+
+            OleDbCommand command1 = new OleDbCommand(query1,connection);
+            OleDbCommand command2 = new OleDbCommand(query2, connection);
+
+            OleDbDataAdapter adapter1 = new OleDbDataAdapter(command1);
+            OleDbDataAdapter adapter2 = new OleDbDataAdapter(command2);
+
+            DataSet dataSet = new DataSet();
+
+            try
+            {
+                
+                adapter1.Fill(dataSet,"Employee");
+                adapter2.Fill(dataSet, "Order");
+                dataGridEmployee.DataSource = dataSet.Tables[0];
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+        }
+
+        private void ModeThree()
+        {
+            OleDbConnection connection = new OleDbConnection();
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OleDb.12.0;Data Source=C:\Users\nwarke\Desktop\NickDb.accdb";
+
+            String query1 = "Select * from Employee";
+            String query2 = "Select * from [Order]";
+
+            
+            OleDbCommand command = new OleDbCommand();
+            command.Connection = connection;
+            command.CommandText = "Insert into Employee (id, name, age, salary ,company) values(@id, @name, @age, @salary ,@company)";
+            command.Parameters.AddWithValue("@id", 50);
+            command.Parameters.AddWithValue("@name", "OKU;");
+            command.Parameters.AddWithValue("@age", 30);
+            command.Parameters.AddWithValue("@salary", 3046);
+            command.Parameters.AddWithValue("@company", "Gopu");
+
+
+            DataSet dataSet = new DataSet();
+                connection.Open();
+            OleDbTransaction transaction = connection.BeginTransaction(); ;
+            OleDbCommand command2 = new OleDbCommand(query2, connection, transaction);
+            try
+            {
+                transaction.Begin();
+                Console.WriteLine("Rows update - {0}",command.ExecuteNonQuery());
+                transaction.Commit();
+                //dataGridEmployee.DataSource = dataSet.Tables[0];
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                transaction.Rollback();
+            }
+        }
+
+        private void btnMode1_Click(object sender, EventArgs e)
+        {
+            ModeThree();
+        }
     }
 }
