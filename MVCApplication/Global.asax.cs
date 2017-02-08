@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MVCApplication.ModelBinder;
+using MVCApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +13,7 @@ namespace MVCApplication
     {
         protected void Application_Start()
         {
+            System.Web.Mvc.ModelBinders.Binders.Add(typeof(Person), new PersonBinder());
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

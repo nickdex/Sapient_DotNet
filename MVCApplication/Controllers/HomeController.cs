@@ -17,13 +17,6 @@ namespace MVCApplication.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Index(FormCollection collection)
-        {
-            string id = collection["UserId"];
-            string password = collection["Password"];
-            return View();
-        }
 
         public ActionResult Test()
         {
