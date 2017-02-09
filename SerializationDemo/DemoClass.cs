@@ -11,7 +11,6 @@ namespace SerializationDemo
     public class DemoClass: ISerializable
     {
         private double _salary;
-        SerializationInfo _info;
         public DemoClass(int salary)
         {
             _salary = salary;
@@ -42,7 +41,6 @@ namespace SerializationDemo
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            _info = info;
             info.AddValue("Id", Id);
             info.AddValue("Age", Age);
         }
