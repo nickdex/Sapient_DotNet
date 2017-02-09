@@ -18,14 +18,11 @@ namespace MVCApplication.HtmlHelpers
 
             outString += "<tr>";
 
-            
-
-            foreach(var property in properties) 
+            properties.ForEach(p =>
             {
-                outString += "<th>";
-                outString += property.Name;
-                outString += "</th>";
-            }
+                outString += string.Format("<th>{0}</th>", p.Name);
+            });
+
             outString += "</tr>";
 
             foreach (var item in source)

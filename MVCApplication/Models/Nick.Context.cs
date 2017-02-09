@@ -13,10 +13,10 @@ namespace MVCApplication.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NickEntities2 : DbContext
+    public partial class NickEntities3 : DbContext
     {
-        public NickEntities2()
-            : base("name=NickEntities2")
+        public NickEntities3()
+            : base("name=NickEntities3")
         {
         }
     
@@ -25,6 +25,7 @@ namespace MVCApplication.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Person> People { get; set; }
     }
 }
