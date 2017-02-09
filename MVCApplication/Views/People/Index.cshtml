@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<MVCApplication.Models.Person>
-
+@using MVCApplication.HtmlHelpers
 @{
     ViewBag.Title = "Index";
 }
@@ -9,7 +9,10 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+
+@Html.CreateGrid(Model)
+
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -48,4 +51,4 @@
     </tr>
 }
 
-</table>
+</table>*@

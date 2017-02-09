@@ -6,36 +6,46 @@ using System.Web.Mvc;
 
 namespace MVCApplication.HtmlHelpers
 {
-    public static class CustomHelpers<T>
+    public static class CustomHelpers
     {
         public static MvcHtmlString CreateGrid<T>(this HtmlHelper helper, IEnumerable<T> source)
         {
             String outString = "<table class='table'>";
-            var properties = source[0].GetProperties().ToList();
+            
+            Type type = typeof(T);
+
+            var properties = type.GetProperties().ToList();
+
+            outString += "<tr>";
+
+            
+
+            foreach(var property in properties) 
+            {
+                outString += "<th>";
+                outString += property.Name;
+                outString += "</th>";
+            }
+            outString += "</tr>";
 
             foreach (var item in source)
-	            {
+	        {
 		            outString += "<tr>";
-                    Type model = item.GetType();
-
-                    object instance = Activator.CreateInstance(model);
-
-                    foreach (var propertyInfo in model.GetProperties())
+                    
+                    foreach (var propertyInfo in type.GetProperties())
                     {
                         outString += "<td>";
-                        var value = propertyInfo.GetValue(instance);
+                        outString += propertyInfo.GetValue(item);
+
                         outString += "</td>";
                         
                     }
-                    
-                    //properties.ForEach(p => outString += string.Format("<th>{0}</th>", Convert.ChangeType(p.GetValue(), p.GetType())));
-            
+                               
                     outString += "</tr>";
-
-	            }
+            }
             
-
             outString += "</table>";
+            return MvcHtmlString.Create(outString);
         }
     }
 }
