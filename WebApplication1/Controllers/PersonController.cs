@@ -11,12 +11,7 @@ namespace WebApplication1.Controllers
     public class PersonController : ApiController
     {
         static List<Person> _persons;
-
-        public PersonController()
-        {
-
-        }
-
+        
         static PersonController()
         {
             _persons = new List<Person>();
@@ -37,8 +32,9 @@ namespace WebApplication1.Controllers
         }
 
         // POST: api/Person
-        public void Post([FromBody]string value)
+        public void Post(Person person)
         {
+            _persons.Add(person);
         }
 
         // PUT: api/Person/5
