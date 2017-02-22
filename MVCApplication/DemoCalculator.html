@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Hello
+    </title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+    <script>
+        function add()
+        {
+            var p1 = document.getElementById("p1").value;
+            var p2 = document.getElementById("p2").value;
+            var operator = document.getElementById("opt").value;
+            var result;
+            switch (operator) {
+                case "+":
+                    result = parseInt(p1, Int16Array) + parseInt(p2, Int16Array);
+                    break;
+                case "-":
+                    result = p1 - p2;
+                    break;
+                case "*":
+                    result = p1 * p2;
+                    break;
+                case "/":
+                    if (p2 == 0) {
+                        result = "Undefined";
+                    }
+                    else { result = p1 / p2; }
+                    break;
+       
+                default:
+                    result = "";
+
+            }
+            alert(result);
+        }
+
+        function demo()
+        {
+            alert();
+        }
+    </script>
+</head>
+<body>
+    Param 1
+    <input type="text" name="p1" id="p1" />
+    Param 2
+    <input type="text" name="p2" id="p2" />
+    Operator
+    <select id="opt">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="submit" name="Enter" onclick="add()"  />
+</body>
+</html>
