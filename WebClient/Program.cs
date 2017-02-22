@@ -10,13 +10,12 @@ namespace WebClient
     {
         static void Main(string[] args)
         {
-            //Calculator.CalculatorClient client = new Calculator.CalculatorClient("Basic");
-            //Calculator.CoolerClient coolerClient = new Calculator.CoolerClient("Basic");
-            //var response = client.Operation(new Calculator.Request() { operation = Calculator.Operation.ADD, Value1 = 5, Value2 = 10 });
+            Calculator.CalculatorClient client = new Calculator.CalculatorClient("Basic");
+            var response = client.Operation(new Calculator.Request() { operation = Calculator.Operation.NONE, Value1 = 5, Value2 = 10 });
 
-            Cooler.CoolerClient client = new Cooler.CoolerClient("Basic1");
+            //Cooler.CoolerClient client = new Cooler.CoolerClient("Basic1");
 
-            var result = client.CalculateCoolnes("nikhil");
+            //var result = client.CalculateCoolnes("nikhil");
 
         }
     }

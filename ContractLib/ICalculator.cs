@@ -13,6 +13,7 @@ namespace ContractDemo
     public interface ICalculator
     {
         [OperationContract]
+        [FaultContract(typeof(Response))]
         Response Operation(Request request);
     }
 }

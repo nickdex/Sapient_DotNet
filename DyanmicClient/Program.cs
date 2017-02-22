@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContractDemo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -17,9 +18,22 @@ namespace DyanmicClient
 
             CustomProxy proxy = new CustomProxy();
 
-            var result=  proxy.Operation(new ContractDemo.Request() { operation = ContractDemo.Operation.ADD, Value2 = 5, Value1 = 10 });
-            Console.WriteLine(result.Result);
-            Console.WriteLine(result.Count);
+            try
+            {
+                var result = proxy.Operation(new ContractDemo.Request() { operation = ContractDemo.Operation.NONE, Value2 = 5, Value1 = 10 });
+                Console.WriteLine(result.Result);
+                Console.WriteLine(result.Count);
+            }
+            catch (FaultException<Response> exception)
+            {
+                
+                throw;
+            }
+            catch (Exception exception)
+            {
+
+            }
+            
 
             var result2 = proxy.Operation(new ContractDemo.Request() { operation = ContractDemo.Operation.ADD, Value2 = 5, Value1 = 10 });
             Console.WriteLine(result2.Count);
